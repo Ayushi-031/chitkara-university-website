@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Library</title>
+  <!-- <link rel="stylesheet" href="lib.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <style>
+    /* General Styles */
+       .navbar {
+            background-color: #ffffff;
+            padding: 15px;
+            display: flex;
+            width: 60vw;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: fixed; /* Sticky at the bottom */
+            bottom: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px red
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+        .nav{
+          display: flex;
+          justify-content: center;
+        }
+        .navbar a:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .navbar a {
+                font-size: 20px;
+                margin: 5px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+            bottom: 100%;
+            left: 0;
+            padding-bottom: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            font-size: 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: red;
+            color: white;
+        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+
+    background-image: url(Recorces/libback.jpg);
+  }
+  
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background-color: #f5f5f5;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #d32f2f;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: #d32f2f; /* Red button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #b71c1c; /* Darker red on hover */
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background-color: #e6e6e6; /* Light gray background */
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #d32f2f; /* Red color for headings */
+}
+
+  header .logo h1 {
+    margin: 0;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin-left: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background:url(Recorces/libraryj.jpg);/* Lighter Red */
+    color: white;
+    /* background-color: transparent;
+    backdrop-filter: blur(10px);  */
+  }
+  
+  .hero .search-bar {
+    margin-top: 20px;
+  }
+  
+  .hero .search-bar input {
+    padding: 10px;
+    width: 60%;
+    border: 2px solid #fbf8f8;
+    border-radius: 5px;
+  }
+  
+  .hero .search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background: #b71c1c; /* Dark Red */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hero .search-bar button:hover {
+    background: #dfcfcf;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 20px;
+    margin: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    backdrop-filter: blur(10px); 
+    color: #fbf8f8;
+
+  }
+  
+  section h2 {
+    color:red;
+  }
+  
+  /* Gallery Section */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 15px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #d32f2f;
+    color: white;
+  }
+  .booksd{
+height:200px;
+width:200px;
+border:2px solid rgb(240, 234, 234);
+/* margin-left:650px; */
+float:right;
+margin-bottom:5px;
+}
+
+.book{
+    background-color: #a19494;
+    padding:2px 0PX 5PX 10PX;
+    width:300px;
+    height:320px;
+    /* height:70px; */
+    transition-duration: 1.5s;
+    color:rgb(6, 6, 6);
+    margin:20px;
+    /* position:relative; */
+    
+
+    
+}
+.book:hover{
+    background-color: #d32f2f;
+
+}
+.H{
+    position:relative;
+    left:700px;
+    top:-1000px;
+    width:300px;
+    word-spacing: 10px;
+    font-size:large;
+    
+}
+#catlog{height:500px;}
+.book-list{display:flex;
+margin:10px 40px;}
+#events div{display:flex;
+}
+
+#events div img{
+    width:300px; 
+    height:300px;
+    border-radius:50%;
+    margin: 5px 30px;
+    box-shadow:2px 2px 4px 2px rgb(173, 161, 161)
+
+}
+/* .hero{
+    background-color:rgb(168, 203, 98);
+} */
+ button{border-radius:20px 20px;
+padding:5px;
+width:150px;
+background-color: rgb(225, 212, 212);
+color:rgb(199, 97, 97);
+font-weight:bold;
+}
+input{
+    padding:5px;
+    width:300px;
+    border-radius:10px;
+    border:1px solid black;
+}
+   </style>
+</head>
+<body>
+
+  <section id="home" class="hero">
+    <h2 style=color:white>Welcome to the Library</h2>
+    <p>Your gateway to a world of knowledge and imagination.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for books, authors, or genres...">
+      <button>Search</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p >We provide a diverse collection of books, digital resources, and community programs to inspire and educate readers of all ages.</p>
+  </section>
+  <section id="gallery">
+    <h2>Library Gallery</h2>
+    <div class="gallery">
+      <img src="Recorces/interior.jpg" alt="Library Interior 1">
+      <img src="Recorces/3h.jpg" alt="Library Interior 2">
+      <img src="Recorces/2.jpg" alt="Library Bookshelves">
+      <img src="Recorces/4.jpg" alt="Reading Area">
+      <!-- <img src="8h.jpg" alt="Community Event" >
+      <img src="7h.jpg" alt="Exterior View of the Library"> -->
+    </div>
+  </section>
+  <section id="catalog">
+    
+    <h2>Library Catalog</h2>
+    <!-- <img class="booksd" src="power.jpg"> -->
+    <div class="book-list">
+      <div class="book">
+        <img class="booksd" src="Recorces/power.jpg">
+        <h3 >THE <br><br> POWER <br><br> OF <br><br> NOW</h3>
+<br><br><Br><br>
+        <p>Author: Eckhart Tolle</p>
+      </div>
+      <br>
+      <br>
+      <!-- <img class="booksd" src="lazy.jpg"> -->
+      <div class="bg">
+      <div class="book">
+        <img class="booksd" src="Recorces/lazy.jpg">
+        <h3>THE <br><br>ART <br><br> OF<br><br> LAZINESS</h3>
+        <br><br>
+        <p>Author: Library Mindest </p>
+      </div>
+      </div>
+      <br>
+      <Br>
+      <!-- <img class="booksd" src="fish.jpg" > -->
+
+      <div class="book">
+        <img class="booksd" src="Recorces/fish.jpg" >
+        <h3>FISH<br> <br>IN <br><br>A <br><br>
+            TREE </h3>
+            <br><br>
+        <p>Author: Lynda Hunt </p>
+      </div>
+    </div>
+    <!-- <h6 class="H">A library is a collection of resources, services, and the structure that houses them. Libraries can be physical locations, virtual spaces, or both. They can contain a wide range of materials, including books, newspapers, magazines, films, audio recordings, and computer software. 
+        Libraries provide services to educate, inform, and entertain audiences. They can offer quiet spaces for studying, common areas for group work, and public access to electronic resources and the internet. Most libraries lend materials to people who have a library card. 
+        Libraries have evolved over time from places to store records to information resources and services. The word "library" comes from the Latin word liber, which means "book". The word for library in German, Russian, and the Romance languages comes from the Latinized Greek word bibliotheca. 
+        Some rules and regulations for libraries include:
+        Keeping bags and other items at the entrance
+        Signing the register at the entrance
+        Maintaining silence
+        Not eating, drinking, sleeping, talking, or smoking inside the library
+        Not using mobile phones or other devices that may cause disturbance </h6> -->
+  </section>
+
+  <!-- <section id="gallery">
+    <h2>Library Gallery</h2>
+    <div class="gallery">
+      <img src="interior.jpg" alt="Library Interior 1">
+      <img src="3h.jpg" alt="Library Interior 2">
+      <img src="2.jpg" alt="Library Bookshelves">
+      <img src="4.jpg" alt="Reading Area">
+      <img src="8h.jpg" alt="Community Event" >
+      <img src="7h.jpg" alt="Exterior View of the Library">
+    </div>
+  </section> -->
+
+  <section id="events">
+    <div>
+<img src="Recorces/book.jpg">
+<img src="Recorces/ast.jpg">
+
+<img src="Recorces/hhh.jpg">
+    </div>
+    <br>
+    <h2 type="disc">Upcoming Events</h2>
+    
+      <span><li><strong>Book Club Meeting</strong> - Dec 1, 2024, 5:00 PM</li></span>
+      <span><li><strong>Author Talk: Jane Doe</strong> - Dec 10, 2024, 6:00 PM</li></span>
+     <span><li><strong>Children's Storytime</strong> - Dec 15, 2024, 10:00 AM</li></span>
+    
+    
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email:chitkaralibrary@gmail.com</p>
+    <p>Phone: (123) 456-7890</p>
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+    <!-- <div class="social-media">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div> -->
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Library. All Rights Reserved.</p>
+  </footer>
+  <div class="nav">
+    <nav class="navbar">
+      <a href="extra.html" title="Home"><i class="fas fa-home"></i></a>
+      <a href="squareonemain.html" title="SquareOne"><i class="fas fa-utensils"></i></a>
+      <div class="dropdown">
+          <a href="#" title="Infrastructure"><i class="fas fa-server"></i></a>
+          <div class="dropdown-content">
+              <a href="kalam.html">Kalam Block</a>
+              <a href="cvr.html">CV Raman Block</a>
+              <a href="rj.html">Ramanujan Block</a>
+          </div>
+      </div>
+      <a href="herbalgardern.html" title="Herbal Garden"><i class="fas fa-seedling"></i></a>
+      <a href="zones.html" title="Zones"><i class="fas fa-map-marked-alt"></i></a>
+      <a href="placement.html" title="Placement Cell"><i class="fas fa-handshake"></i></a>
+      <a href="ceed.html" title="Ceed"><i class="fas fa-rocket"></i></a>
+      <a href="dispensary.html" title="Dispensary"><i class="fas fa-medkit"></i></a>
+  </nav>
+  </div>
+</body>
+</html>

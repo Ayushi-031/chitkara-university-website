@@ -1,0 +1,64 @@
+<!-- <nav>
+    <ul class="navbar">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <style>
+    .navbar {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    .navbar a {
+      position: relative;
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease;
+    }
+    .navbar a:hover::after {
+      width: 100%;
+    }
+  </style> -->
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="m1.jpg" alt="Ambience 1">
+      <img src="m2.jpg" alt="Ambience 2">
+      <img src="m3.jpg" alt="Ambience 3">
+      <img src="m4.jpg" alt="Ambience 4">
+    </div>
+  </div>
+  <style>
+    .carousel {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      animation: scroll 12s linear infinite;
+    }
+    .carousel img {
+      width: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+  

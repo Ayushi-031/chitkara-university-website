@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills</title>
+    <style>
+        
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #c0392b;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.search-sort {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-sort input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-sort select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bills-section {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #c0392b; 
+    color: white;
+    font-weight: bold;
+}
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.status.paid {
+    background-color: #27ae60; 
+}
+
+.status.pending {
+    background-color: #f39c12;
+}
+
+.status i {
+    margin-right: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+@media (max-width: 600px) {
+    .search-sort {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-sort input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-sort select {
+        width: 100%;
+    }
+
+    table {
+        font-size: 0.9em; 
+    }
+}
+tr:hover {
+    background-color: #ecf0f1;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Your Bills</h1>
+            <p>Keep track of your orders and payments.</p>
+        </header>
+
+        <div class="search-sort">
+            <input type="text" id="searchInput" placeholder="Search by order number or date...">
+            <select id="sortSelect">
+                <option value="date">Sort by Date</option>
+                <option value="amount">Sort by Amount</option>
+            </select>
+        </div>
+
+        <section class="bills-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Date</th>
+                        <th>Items Ordered</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>2024-11-01</td>
+                        <td>Pizza, Burger</td>
+                        <td>Rs. 360</td>
+                        <td><span class="status paid"><i class="fas fa-check-circle"></i> Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>2024-11-02</td>
+                        <td>Pasta, Salad</td>
+                        <td>Rs. 200</td>
+                        <td><span class="status pending"><i class="fas fa-clock"></i> Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>#003</td>
+                        <td>2024-11-02</td>
+                        <td>Sushi, Miso Soup</td>
+                        <td>Rs.310</td>
+                        <td><span class="status paid"><i class="fas fa-check-circle"></i> Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>#004</td>
+                        <td>2024-11-02</td>
+                        <td>Sushi, Miso Soup</td>
+                        <td>Rs.310</td>
+                        <td><span class="status paid"><i class="fas fa-check-circle"></i> Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>#005</td>
+                        <td>2024-11-02</td>
+                        <td>Sushi, Miso Soup</td>
+                        <td>Rs.310</td>
+                        <td><span class="status paid"><i class="fas fa-check-circle"></i> Paid</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 ONESQUARE. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

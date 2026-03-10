@@ -1,0 +1,244 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: white;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease-out forwards;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.hero-content .btn {
+    background-color: #ff1c1c;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(45deg, #ff1c1c, #ff6347);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.about .text {
+    width: 50%;
+}
+
+.about .image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 28, 28, 0.8);
+}
+
+/* Courses Section */
+.courses {
+    background: #f9f9f9;
+    color: #333;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.course-card {
+    background: #ff1c1c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Achievements Section */
+.achievements {
+    background: #2e3b4e;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.achievements-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.achievement {
+    background: #ff6347;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement h3 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.achievement p {
+    font-size: 1.2rem;
+}
+
+/* Gallery Section */
+.gallery {
+    background: #222;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: #f0f0f0;
+    color: #333;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: #ff6347;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-style: italic;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+/* Virtual Reality Section */
+.virtual-reality {
+    background: #333;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.virtual-reality img {
+    width: 80%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+/* Tech Labs Section */
+.tech-labs {
+    background: linear-gradient(45deg, #1d3c66, #2a7fff);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

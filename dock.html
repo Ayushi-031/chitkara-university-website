@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dock Demo</title>
+  <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .dock-container {
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dock-title {
+    position: absolute;
+    top: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 40px;
+  }
+  
+  .dock-items-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dock-item {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dock-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .dock-icon:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  
+  .dock-icon:hover .tooltip {
+    opacity: 1;
+  }
+  
+  svg {
+    fill: #000;
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Dark Mode */
+  body[data-theme="dark"] {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  body[data-theme="dark"] .dock-items-container {
+    background-color: #444;
+  }
+  
+  body[data-theme="dark"] .dock-icon {
+    background-color: #555;
+  }
+  
+  body[data-theme="dark"] .dock-icon:hover {
+    background-color: #666;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="dock-container">
+    <span class="dock-title">Dock</span>
+    <div class="dock">
+      <div class="dock-items-container">
+          <!-- Home Icon -->
+          <div class="dock-item">
+            <a href="#" aria-label="Home" class="dock-icon">
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2L2 7h6v10h4V7h6z"/>
+              </svg>
+              <span class="tooltip">Home</span>
+            </a>
+          </div>
+        <!-- Food Icon -->
+        <div class="dock-item">
+          <a href="#" aria-label="Food" class="dock-icon">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2C7.58 2 4 5.58 4 10c0 1.85.64 3.54 1.71 4.88L12 22l6.29-7.12C19.36 13.54 20 11.85 20 10c0-4.42-3.58-8-8-8zm0 14.5l-4.5-5.5h9l-4.5 5.5z"/>
+            </svg>
+            <span class="tooltip">Food</span>
+          </a>
+        </div>
+        <!-- Infrastructure Icon -->
+        <div class="dock-item">
+          <a href="#" aria-label="Infrastructure" class="dock-icon">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 0L2 22h20L12 2z"/>
+            </svg>
+            <span class="tooltip">Infrastructure</span>
+          </a>
+        </div>
+        <!-- Bank Icon -->
+        <div class="dock-item">
+          <a href="#" aria-label="Bank" class="dock-icon">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2L2 7h3v10h4V7h6v10h4V7h3z"/>
+            </svg>
+            <span class="tooltip">Bank</span>
+          </a>
+        </div>
+        <!-- Dispensary Icon -->
+        <div class="dock-item">
+          <a href="#" aria-label="Dispensary" class="dock-icon">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M3 2v20h18V2H3zm6 2h6v2H9V4zm-4 4h14v12H5V8z"/>
+            </svg>
+            <span class="tooltip">Dispensary</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

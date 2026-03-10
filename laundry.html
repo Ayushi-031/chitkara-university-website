@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Laundry Services at Our University Campus">
+    <title>University Campus Laundry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       .navbar {
+            background-color: #ffffff;
+            padding: 15px;
+            display: flex;
+            width: 60vw;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px;
+            position: fixed; /* Sticky at the bottom */
+            bottom: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px red;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            color: red;
+            transform: scale(1.2);
+        }
+        .nav{
+          display: flex;
+          justify-content: center;
+        }
+        .navbar a:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .navbar a {
+                font-size: 20px;
+                margin: 5px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+            bottom: 100%;
+            left: 0;
+            padding-bottom: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            font-size: 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: red;
+            color: white;
+        }
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #f44336; /* Red */
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        /* Section Title */
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 1em;
+            color: #f44336; /* Red */
+        }
+
+        /* Container */
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        /* Cards Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Styles */
+        .card1{
+
+            display: flex;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f44336, #e53935); /* Red gradient */
+            z-index: -1;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s ease-out;
+        }
+
+        .card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-body {
+            z-index: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.6em;
+            margin-bottom: 0.5em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .card-body p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .card1 img{
+            width: 400px !important;
+            height: 100%;
+            margin-right: 10px !important;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Section with Animations */
+        .section {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Animation for Section */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 0;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .container {
+                width: 90%;
+                padding: 2rem 0;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- <header>
+    <h1>University Campus Laundry</h1>
+    <p>Your Clothes, Our Care – Clean, Fresh & Fast!</p>
+</header> -->
+
+<div class="container">
+    <!-- Section 1: About Laundry -->
+    <section class="section">
+        <h2>About Our Laundry Services</h2>
+        <div class="card-grid">
+            <div class="card card1">
+                <img src="Recorces/l1.jpg" alt="Laundry Services">
+                <div class="card-body">
+                    <h3>Convenient, Fast, and Reliable</h3>
+                    <p>Located right on campus, our laundry facilities are equipped with modern washers and dryers. Our goal is to provide you with an efficient, convenient, and hassle-free laundry experience so you can focus on your studies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Machinery Used in Laundry -->
+    <section class="section">
+        <h2>Advanced Laundry Machinery</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="Recorces/l2.jpg" alt="Washing Machines">
+                <div class="card-body">
+                    <h3>High-Efficiency Washers</h3>
+                    <p>Our washing machines are energy-efficient and capable of handling large loads, providing excellent cleaning without harming your clothes. They're also gentle on delicate fabrics.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Recorces/l3.jpg" alt="Drying Machines">
+                <div class="card-body">
+                    <h3>Fast & Efficient Dryers</h3>
+                    <p>With high-speed drying technology, our dryers ensure that your clothes are ready in no time. Whether it's towels or delicate items, our dryers get the job done quickly and efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="nav">
+    <nav class="navbar">
+      <a href="extra.html" title="Home"><i class="fas fa-home"></i></a>
+      <a href="squareonemain.html" title="SquareOne"><i class="fas fa-utensils"></i></a>
+      <div class="dropdown">
+          <a href="#" title="Infrastructure"><i class="fas fa-server"></i></a>
+          <div class="dropdown-content">
+              <a href="kalam.html">Kalam Block</a>
+              <a href="cvr.html">CV Raman Block</a>
+              <a href="rj.html">Ramanujan Block</a>
+          </div>
+      </div>
+      <a href="herbalgardern.html" title="Herbal Garden"><i class="fas fa-seedling"></i></a>
+      <a href="zones.html" title="Zones"><i class="fas fa-map-marked-alt"></i></a>
+      <a href="placement.html" title="Placement Cell"><i class="fas fa-handshake"></i></a>
+      <a href="ceed.html" title="Ceed"><i class="fas fa-rocket"></i></a>
+      <a href="dispensary.html" title="Dispensary"><i class="fas fa-medkit"></i></a>
+  </nav>
+  </div>
+</body>
+</html>

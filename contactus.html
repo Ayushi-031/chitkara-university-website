@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Food Ordering</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #c0392b; /* Dark Red */
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #c0392b; /* Dark Red */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e74c3c; /* Lighter Red */
+    padding-bottom: 10px;
+}
+
+.contact-info, .contact-form {
+    margin-bottom: 30px;
+}
+
+.contact-info p, .contact-form label {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #e74c3c; /* Lighter Red */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #e74c3c; /* Lighter Red */
+    outline: none;
+}
+
+button {
+    background-color: #e74c3c; /* Lighter Red */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c0392b; /* Darker Red */
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #e74c3c; /* Lighter Red */
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #c0392b; /* Dark Red */
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contact Us</h1>
+        </header>
+
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><strong>Customer Service Hours:</strong></p>
+            <p>Monday - Friday: 9 AM - 9 PM</p>
+            <p>Saturday - Sunday: 10 AM - 10 PM</p>
+            <p><strong>Phone:</strong> 985450000</p>
+            <p><strong>Email:</strong> <a href="#">onesquaresupport@chtkarauniversity</a></p>
+            <p><strong>Address:</strong>Chitkara  University , Baddi , Himachal Pradesh</p>
+        </section>
+
+        <section class="contact-form">
+            <h2>Contact Form</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="order-number">Order Number (if applicable):</label>
+                <input type="text" id="order-number" name="order-number">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <footer>
+            <h2>Follow Us</h2>
+            <p>Stay connected with us on social media!</p>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

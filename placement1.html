@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Informative Page</title>
+    
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+header {
+    background-color: #a90f0f;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:400px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('Recorces/place4.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about .content {
+    display: flex;
+    align-items: center;
+}
+
+.about .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.about .text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about .image img {
+    width: 400px;
+    height: auto;
+}
+
+/* Features Section */
+.features {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.feature-cards {
+    display: flex;
+    margin:10px;
+    justify-content: space-around;
+    padding:10px;
+    flex-wrap:wrap;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin:25px;
+}
+
+.feature-card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #b74949;
+    color:white;
+    font:italic;
+    font-size:x-large;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    gap: 30px;
+}
+
+.testimonial {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 18px;
+    color: #555;
+}
+
+.testimonial p:last-child {
+    font-style: italic;
+    color: #777;
+}
+.testimonial img{border-radius: 50%;
+border:2px solid white;
+box-shadow:5px 5px 5px#777;}
+
+/* FAQ Section */
+.faq {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+}
+
+.accordion .accordion-item {
+    margin-bottom: 15px;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+}
+.text h2{color:rgb(152, 60, 60);}
+.text p{word-spacing: 10px;
+color:rgb(249, 232, 232);
+font-style: italic;
+letter-spacing: 2px;
+padding:3px;}
+.text{
+padding:50px;}
+#about{background-color: #777;
+margin:10px;
+}
+#about img{border-radius:20px;
+margin:0px 10px;}
+
+.footer-content{ height:60px;
+width:100%;
+background-color: #a12905;
+color:white;
+text-align:center;
+font-size:larger;
+padding:30px;}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+   
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to chitkara's Placement cell </h1>
+            <p>“Opportunities don't happen, you create them.”</p>
+               <p>— Chris Grosser</p>
+      
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="content">
+            <div class="text">
+                <h2>About Us</h2>
+                <p>The Placement Cell at chitkara university is dedicated to providing students with the necessary tools, guidance, and opportunities to kickstart their professional careers. Our mission is to bridge the gap between education and industry by offering personalized career counseling, skill development workshops, and access to top-tier companies through campus recruitment drives. We work closely with leading organizations across various sectors to ensure that our students are exposed to a wide range of career opportunities. From resume building and mock interviews to internships and job placements, our Placement Cell ensures that every student is well-prepared to succeed in the competitive job market. Additionally, we foster valuable connections with alumni and industry professionals, providing students with a strong network for future career growth and development. At chitkara university, we are committed to shaping the leaders of tomorrow by offering comprehensive support throughout their career journey.</p>
+            </div>
+            <div class="image">
+                <img src="Recorces/place10.jpg" alt="About Us Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="Recorces/councel.jpg" alt="Feature 1" width="100px;" height="100px;">
+                <h3>councelling</h3>
+                <p>Career Counseling and Guidance</p>
+            </div>
+            <div class="feature-card">
+                <img src="Recorces/councel5.jpg" alt="Feature 2" width="100px;" height="100px;">
+                <h3>Internships</h3>
+                <p>Internship and Job Placement Assistance</p>
+            </div>
+            <div class="feature-card">
+                <img src="Recorces/councel4.jpg" alt="Feature 3" width="100px;" height="100px;">
+                <h3>Networking</h3>
+                <p>Industry Interface and Networking</p>
+            </div>
+            <div class="feature-card">
+                <img src="Recorces/councel3.jpg" alt="Feature 3" width="100px;" height="100px;">
+                <h3>support</h3>
+                <p>Support for Students with Special Needs</p>
+            </div>
+            <div class="feature-card">
+                <img src="Recorces/councel6.jpg" alt="Feature 3" width="100px;" height="100px;">
+                <h3>Partnerships</h3>
+                <p>Employer Engagement and Partnerships</p>
+            </div>
+            <div class="feature-card">
+                <img src="Recorces/councel2.jpg" alt="Feature 3"width="100px;" height="100px;">
+                <h3>PPT</h3>
+                <p>Pre-Placement Talks </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <br>
+        <div class="carousel">
+            <div class="testimonial">
+                <img src="Recorces/client1.jpg" height="200px;" width="250px;">
+                <br><br><br>
+                <p>"This company transformed our business. Highly recommend!"</p>
+                <br>
+                <p>KARAN </p>
+            </div>
+            <div class="testimonial">
+                <img src="Recorces/client3.jpg" height="200px;" width="250px;">
+                <br><br><br>
+                <p>"Professional, efficient, and creative. Excellent service!"</p>
+                <br>
+                <p>PAYAL THAKUR</p>
+            </div>
+            <div class="testimonial">
+                <img src="Recorces/client2.jpg" height="200px;" width="250px;">
+                <br><br><br>
+                <p>"Amazing results every time. They truly care about quality!"</p>
+                <br>
+                <p> HARSH JAIN</p>
+            </div>
+        </div>
+    </section><br><Br><Br>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <br>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-button">What is the role of the Placement Cell in the college?</button>
+                <div class="accordion-content">
+                    <p>The Placement Cell is responsible for helping students secure internships, jobs, and career opportunities.</p>
+                </div><br>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">What companies visit the campus for recruitment drives?</button>
+                <div class="accordion-content">
+                    <p>The Placement Cell collaborates with top companies across diverse industries, including technology, finance, consulting, manufacturing, and more.</p>
+                </div><br>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button"> How does the Placement Cell track placements?</button>
+                <div class="accordion-content">
+                    <p>The Placement Cell tracks the placement progress and collects data on the number of students placed, the industries they are hired in, the roles they occupy, and the salary packages offered</p>
+                </div><br>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo"></div>
+            
+            @copyright all rights reserved
+        </div>
+    </footer>
+</body>
+</html>
